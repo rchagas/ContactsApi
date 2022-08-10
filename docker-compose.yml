@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+ mariadbst:
+    image: mariadb:10.6
+    container_name: contactDB
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_DATABASE: "LocalDB"
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "true"
+      MARIADB_ROOT_PASSWORD: ""
+      
+    volumes:
+      - ../mysql:/var/lib/mysql
+    restart: always
